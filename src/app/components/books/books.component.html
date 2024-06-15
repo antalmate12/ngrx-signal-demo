@@ -1,0 +1,21 @@
+<h1>Books component</h1>
+
+<div style="display: flex">
+  <input type="text" #booksQueryInput />
+  <button (click)="store.loadByQuery(booksQueryInput.value)">
+    Load with query
+  </button>
+
+  @if (store.isLoading()) {
+    <span>Loading...</span>
+  }
+</div>
+
+<ul>
+  @for (book of store.books(); track book.id) {
+    <li>
+      <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="thumbnail" />
+      <span>{{ book.volumeInfo.title }}</span>
+    </li>
+  }
+</ul>
