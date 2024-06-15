@@ -24,6 +24,7 @@ const initialState: BooksState = {
   filter: { query: '', order: 'asc' },
 };
 
+// It's kinda cool AF
 export const BooksStore = signalStore(
   withState(initialState),
   withComputed(({ books, filter }) => ({
