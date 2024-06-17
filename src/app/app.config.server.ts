@@ -4,6 +4,7 @@ import { appConfig } from './app.config';
 
 const serverConfig: ApplicationConfig = {
   providers: [
+    // Oh shit, it actually works
     provideServerRendering()
   ]
 };
