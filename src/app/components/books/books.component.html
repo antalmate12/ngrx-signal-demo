@@ -14,7 +14,13 @@
 <ul>
   @for (book of store.books(); track book.id) {
     <li>
-      <img [src]="book.volumeInfo.imageLinks?.thumbnail ?? book.volumeInfo.imageLinks?.smallThumbnail" alt="thumbnail" />
+      <img
+        [src]="
+          book.volumeInfo.imageLinks?.thumbnail ??
+          book.volumeInfo.imageLinks?.smallThumbnail
+        "
+        alt="thumbnail"
+      />
       <span>{{ book.volumeInfo.title }}</span>
     </li>
   }

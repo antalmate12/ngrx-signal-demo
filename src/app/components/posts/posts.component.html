@@ -1,0 +1,18 @@
+<h1>Posts</h1>
+
+<form [formGroup]="addPostForm" (submit)="onSubmit()">
+  <input type="text" formControlName="title" placeholder="title" />
+  <input type="text" formControlName="body" placeholder="body" />
+  <input type="number" formControlName="userId" placeholder="userId" />
+
+  <button type="submit">Submit</button>
+</form>
+
+<ul>
+  @for (post of store.posts(); track post.id) {
+    <li>
+      <p>{{ post.title }}</p>
+      <p>{{ post.body }}</p>
+    </li>
+  }
+</ul>
