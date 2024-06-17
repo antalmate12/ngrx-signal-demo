@@ -9,7 +9,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { NgHttpCachingModule } from 'ng-http-caching';
 
 const ngHttpCachingConfig: NgHttpCachingConfig = {
-  lifetime: 1000 * 10 // 10 seconds
+  lifetime: 1000 * 10, // 10 seconds
+  allowedMethod: ['GET'],
 };
 
 export const appConfig: ApplicationConfig = {
