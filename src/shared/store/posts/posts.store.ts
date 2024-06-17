@@ -35,7 +35,7 @@ export const PostsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap(() => {
-          return postsService.getPosts().pipe(
+          return postsService.getAll().pipe(
             tapResponse({
               next: (posts) => patchState(store, { posts: posts }),
               error: console.error,
@@ -49,7 +49,7 @@ export const PostsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((post) => {
-          return postsService.addPost(post).pipe(
+          return postsService.add(post).pipe(
             tapResponse({
               next: (post) =>
                 patchState(store, { posts: [post, ...store.posts()] }),

@@ -1,19 +1,13 @@
-import { HttpClient } from "@angular/common/http";
-import { inject, Injectable } from "@angular/core";
-import { Post } from "./post";
-import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Post } from './post';
+import { CrudService } from '../../services/crud.service';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
-export class PostsService {
-  private http = inject(HttpClient)
-
-  getPosts = (): Observable<Post[]> => {
-    return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
-  }
-
-  addPost = (post: Partial<Post>): Observable<Post> => {
-    return this.http.post<Post>("https://jsonplaceholder.typicode.com/posts", post);
+export class PostsService extends CrudService<Post> {
+  constructor() {
+    super('posts', inject(HttpClient));
   }
 }
