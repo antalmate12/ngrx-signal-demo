@@ -38,7 +38,7 @@ export class PostsComponent {
     this.store.loadPosts();
   }
 
-  onSubmit() {
+  onSubmit = (): void => {
     this.store.addPost(this.addPostForm.getRawValue());
   }
 }
