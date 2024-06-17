@@ -111,7 +111,7 @@ export interface VolumeInfo {
   allowAnonLogging:    boolean;
   contentVersion:      string;
   panelizationSummary: PanelizationSummary;
-  imageLinks:          ImageLinks;
+  imageLinks?:          ImageLinks;
   language:            Language;
   previewLink:         string;
   infoLink:            string;

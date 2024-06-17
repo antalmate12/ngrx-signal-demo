@@ -1,11 +1,15 @@
 <h1>Posts</h1>
 
+<button (click)="store.loadPosts()">refresh posts</button>
+
 <form [formGroup]="addPostForm" (submit)="onSubmit()">
   <input type="text" formControlName="title" placeholder="title" />
   <input type="text" formControlName="body" placeholder="body" />
   <input type="number" formControlName="userId" placeholder="userId" />
 
   <button type="submit">Submit</button>
+
+  <span>{{store.isLoading()}}</span>
 </form>
 
 <ul>
